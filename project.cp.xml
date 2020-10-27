@@ -1,0 +1,86 @@
+<project type="bio">
+  <property name="target.model" value="genomic"/>
+  <property name="common.os.prefix" value="common"/>
+
+<sources>
+
+
+<!--<source name="cds-fasta" type="fasta">
+  <property name="fasta.taxonId" value="3055"/>
+  <property name="fasta.dataSetTitle" value="JGI CDS fasta data set for Chramydomonas rainhrditii"/>
+  <property name="fasta.dataSourceName" value="JGI"/>
+  <property name="fasta.className" value="org.intermine.model.bio.CDS"/>
+  <property name="fasta.classAttribute" value="secondaryIdentifier"/>
+  <property name="fasta.includes" value="*_CDSs.fasta"/>
+  <property name="src.data.dir" location="/home/dl-box/Chlre/Chlre4/best/"/>
+  <property name="fasta.licence" value="https://mycocosm.jgi.doe.gov/Chlre4/Chlre4"/>
+</source>
+-->
+
+
+<source name="genes-gff" type="chlre-gff">
+  <property name="gff3.taxonId" value="3055"/>
+  <property name="gff3.seqClsName" value="Chromosome"/>
+  <property name="gff3.dataSourceName" value="JGI"/>
+  <property name="gff3.dataSetTitle" value="Chlamydomonas reinharditii genome"/>
+  <property name="src.data.dir" location="/home/dl-box/Chlre/Chlre4/best/"/>
+  <property name="gff3.includes" value="Chlre4_best_genes.gff"/>
+  <property name="gff3.licence" value="https://mycocosm.jgi.doe.gov/Chlre4/Chlre4"/>
+</source>
+
+<!--
+<source name="proteins-fasta" type="fasta">
+  <property name="fasta.taxonId" value="3055"/>
+  <property name="fasta.dataSetTitle" value="JGI protein fasta data set for Chramydomonas rainhrditii"/>
+  <property name="fasta.dataSourceName" value="JGI"/>
+  <property name="fasta.className" value="org.intermine.model.bio.Protein"/>
+  <property name="fasta.classAttribute" value="primaryIdentifier"/>
+  <property name="fasta.includes" value="*_proteins.fasta"/>
+  <property name="src.data.dir" location="/home/dl-box/Chlre/Chlre4/best/"/>
+  <property name="fasta.licence" value="https://mycocosm.jgi.doe.gov/Chlre4/Chlre4"/>
+</source>
+
+
+<source name="transcripts-fasta" type="fasta">
+  <property name="fasta.taxonId" value="3055"/>
+  <property name="fasta.dataSetTitle" value="JGI transcript fasta data set for Chramydomonas rainhrditii"/>
+  <property name="fasta.dataSourceName" value="JGI"/>
+  <property name="fasta.className" value="org.intermine.model.bio.Transcript"/>
+  <property name="fasta.classAttribute" value="primaryIdentifier"/>
+  <property name="fasta.includes" value="*_transcripts_2.fasta"/>
+  <property name="src.data.dir" location="/home/dl-box/Chlre/Chlre4/best/"/>
+  <property name="fasta.licence" value="https://mycocosm.jgi.doe.gov/Chlre4/Chlre4"/>
+</source>
+
+
+<source name="chromosome-fasta" type="fasta">
+  <property name="fasta.taxonId" value="3055"/>
+  <property name="fasta.dataSetTitle" value="JGI chromosome fasta data set for Chramydomonas rainhrditii"/>
+  <property name="fasta.dataSourceName" value="JGI"/>
+  <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
+  <property name="fasta.includes" value="Chlre4_genomic_scaffolds.fasta"/>
+  <property name="src.data.dir" location="/home/dl-box/Chlre/Chlre4/"/>
+  <property name="fasta.classAttribute" value="primaryIdentifier"/>
+  <property name="fasta.sequenceType" value="Chromosome"/>
+  <property name="fasta.licence" value="https://mycocosm.jgi.doe.gov/Chlre4/Chlre4"/>
+</source>
+
+
+<source name="entrez-organism" type="entrez-organism">↲
+  <property name="src.data.file" location="organisms.xml"/>↲
+</source>
+-->
+</sources>
+
+
+<post-processing>
+  <post-process name="do-sources" />
+  <post-process name="create-attribute-indexes" />
+  <post-process name="summarise-objectstore" />
+  <post-process name="create-autocomplete-index" />
+  <post-process name="populate-child-features"/>
+  <post-process name="create-search-index" />
+</post-processing>
+
+</project>
+

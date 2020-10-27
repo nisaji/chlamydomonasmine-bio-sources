@@ -1,0 +1,5 @@
+rootProject.name = 'bio-sources'
+include ':bio-source-chlre-gff'
+project(':bio-source-chlre-gff').projectDir = new File(settingsDir, './chlre-gff')
+include ':bio-source-chlre-cds'
+project(':bio-source-chlre-cds').projectDir = new File(settingsDir, './chlre-cds')
